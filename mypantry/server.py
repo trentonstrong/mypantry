@@ -46,6 +46,7 @@ manager = flask.ext.restless.APIManager(app, flask_sqlalchemy_db=db)
 # default. Allowed HTTP methods can be specified as well.
 manager.create_api(Meal, methods=['GET', 'POST', 'DELETE'])
 
+db.create_all()
 
 @app.route('/api/authenticate')
 @jsonify
